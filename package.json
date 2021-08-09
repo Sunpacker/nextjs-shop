@@ -1,15 +1,51 @@
 {
-  "name": "learn-starter",
+  "name": "internet-shop",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "test": "react-scripts test",
+    "dev": "cross-env NODE_ENV=development next dev",
+    "start": "cross-env NODE_ENV=production next start",
     "build": "next build",
-    "start": "next start"
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "axios": "^0.21.1",
+    "clsx": "^1.1.1",
     "next": "^11.0.0",
+    "next-redux-wrapper": "^7.0.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "webpack": "^5.49.0",
+    "yarn": "^1.22.11"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.13",
+    "@types/react": "^17.0.16",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "^7.0.1",
+    "lint-staged": ">=10",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  },
+  "lint-staged": {
+    "*.{ts,js,tsx,json,css,html,json}": [
+      "yarn prettier --write .",
+      "git add ."
+    ],
+    "*.{js,css,md}": "prettier --write",
+    "*.js": "eslint --cache --fix"
   }
 }
