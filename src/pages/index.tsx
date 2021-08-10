@@ -2,11 +2,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { GetServerSideProps } from 'next'
 
-import MetaInfo from 'components/Layout/MetaInfo'
+import Layout from 'components/Layout'
+import MetaInfo from 'components/Layout/MetaInfo/index'
 
 import { wrapper } from 'store/store'
 import { loadGoodsThunk } from 'store/goods/thunks'
 import { getGoodsItems } from 'store/goods/selectors'
+
+import s from './styles.module.scss'
 
 export default function Home({ meta }) {
   const { items } = useSelector((state) => ({
@@ -14,10 +17,10 @@ export default function Home({ meta }) {
   }))
 
   return (
-    <>
+    <Layout>
       <MetaInfo {...meta} />
-      <p>hello world</p>
-    </>
+      <p className={s.test}>hello world</p>
+    </Layout>
   )
 }
 

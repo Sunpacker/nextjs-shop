@@ -1,0 +1,8 @@
+@import "./smart-grid";
+@import "./vars";
+
+@include reset();
+
+.wrapper {
+  @include wrapper();
+}

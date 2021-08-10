@@ -12,13 +12,7 @@ interface IStateGoods {
 
 const initialState: IStateGoods = {
   loadingStatus: LOADING_STATUS.IDLE,
-  items: [
-    {
-      name: 'gfdg',
-      price: 1,
-      image: '',
-    },
-  ],
+  items: [],
 }
 
 export const adapter = createEntityAdapter()
@@ -35,16 +29,6 @@ export const goods = createSlice({
       state.loadingStatus = LOADING_STATUS.IDLE
       state.items = payload
     })
-    // [HYDRATE]: (state, { payload }) => {
-    //   return payload.goods
-    // },
-    // [loadGoodsThunk.pending]: (state) => {
-    //   state.loadingStatus = LOADING_STATUS.LOADING
-    // },
-    // [loadGoodsThunk.fulfilled]: (state, { payload }) => {
-    //   state.loadingStatus = LOADING_STATUS.IDLE
-    //   state.items = payload
-    // },
   },
 })
 
